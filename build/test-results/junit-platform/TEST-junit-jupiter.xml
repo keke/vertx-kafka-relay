@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="0" skipped="0" failures="0" errors="0" time="0.006" hostname="KMP.local" timestamp="2016-09-23T23:09:48">
+<properties>
+<property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.encoding.pkg" value="sun.io"/>
+<property name="file.separator" value="/"/>
+<property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="gopherProxySet" value="false"/>
+<property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+<property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+<property name="java.class.path" value="/Users/keke/Work/github/vertx-kafka-relay/build/classes/test:/Users/keke/Work/github/vertx-kafka-relay/build/resources/test:/Users/keke/Work/github/vertx-kafka-relay/build/classes/main:/Users/keke/Work/github/vertx-kafka-relay/build/resources/main:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-recipes/2.11.0/1667c5ee04cb26ba002ef6343072c8a5e8f731a8/curator-recipes-2.11.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/0.10.0.1/36ebf4044d0e546bf74c95629d736ca63320a323/kafka-clients-0.10.0.1.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/139535a69a4239db087de9bab0bee568bf8e0b70/slf4j-api-1.7.21.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-web/3.3.3/70adc789af9dae71fe71ead03d268cd0692b3349/vertx-web-3.3.3.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/19.0/6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9/guava-19.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.6.2/a91369f655eb1639c6aece5c5eb5108db18306/log4j-core-2.6.2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-jul/2.6.2/afb8205d03d7f30405b385a2b0fdf1086bc9bc2a/log4j-jul-2.6.2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.6.2/71d6c56133e0548e07434add048d7a7a2db53512/log4j-slf4j-impl-2.6.2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.21/2f22c882ffa479d1e9ff4eb0e8e2c29f2a0871ed/jul-to-slf4j-1.7.21.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/2.0.2-beta/3e24f450275812fb354d29a58b66b8f26e13002f/mockito-all-2.0.2-beta.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.0.0-M2/8227f1e8ce8c1badea96a58fd3e9fc266c674487/junit-jupiter-api-5.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.0.0-M2/2e6493b9e7a1b7954c365065b393bc44f4008d84/junit-jupiter-engine-5.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-framework/2.11.0/3e2785cd380219a55e247a9335af0415e1a22c8d/curator-framework-2.11.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/net.jpountz.lz4/lz4/1.3.0/c708bb2590c0652a642236ef45d9f99ff842a2ce/lz4-1.3.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.2.6/48d92871ca286a47f230feb375f0bbffa83b85f6/snappy-java-1.1.2.6.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-auth-common/3.3.3/c8a810d5f72f5331827183ff22a4a6f204b5b21f/vertx-auth-common-3.3.3.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.3.3/515957df3ba4561b6c53497a6bc992d8d6f565c0/vertx-core-3.3.3.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.6.2/bd1b74a5d170686362091c7cf596bbc3adf5c09b/log4j-api-2.6.2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.0.0-M1/b091255eafd515995a5c5fa042cd8db6f4860bf6/opentest4j-1.0.0-M1.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.0.0-M2/a6f1f88b10512623ed14e8b93be10b7590f74c11/junit-platform-commons-1.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.0.0-M2/fe36ee348295ec740b068b3dd46ec5c733134eb5/junit-platform-engine-1.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-client/2.11.0/3cfb7901ef7d16295fcfbf2533b5cbfa4607a5a2/curator-client-2.11.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.5.Final/607f8433d8782445e72abe34e43a7e57e86a5e6c/netty-common-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.5.Final/b5fb6bccda4d63d4a74c9faccdf32f77ab66abc1/netty-buffer-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.5.Final/37126b370722ff9631ee13c91139aacec0a71d1d/netty-transport-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.5.Final/6262900ee9487e62560030a136160df953b1cd6b/netty-handler-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.5.Final/46eebc10fe115eef1203733359071304d993aee8/netty-handler-proxy-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.5.Final/87bda1b9ec7e3f75ca721fc87735cbedad2aa1a/netty-codec-http-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.5.Final/6568f4fefc2ce0a8761e5bc14d95a6ba1758be29/netty-codec-http2-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.5.Final/5f367bedcdc185a727fda3296b9a18014cdc22c4/netty-resolver-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.5.Final/5c7bc8523cdb5f1870f012afd01e0242e733e133/netty-resolver-dns-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.7.4/b8f38a249116b66d804a5ca2b14a3459b7913a94/jackson-core-2.7.4.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.7.4/1e9c6f3659644aeac84872c3b62d8e363bf4c96d/jackson-databind-2.7.4.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.apache.zookeeper/zookeeper/3.4.6/1b2502e29da1ebaade2357cd1de35a855fa3755/zookeeper-3.4.6.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.5.Final/66bbf9324fa36467d041083f89328e2a24ec4f67/netty-codec-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.5.Final/9e3f0891d43404cda3d61312c169b4472e2a5e82/netty-codec-socks-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.5.Final/2b562b231fc61431df4da2084ec9863809fad131/netty-codec-dns-4.1.5.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.7.0/19f42c154ffc689f40a77613bc32caeb17d744e3/jackson-annotations-2.7.0.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/jline/jline/0.9.94/99a18e9a44834afdebc467294e1138364c207402/jline-0.9.94.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/io.netty/netty/3.7.0.Final/7a8c35599c68c0bf383df74469aa3e03d9aca87/netty-3.7.0.Final.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.0.0-M2/2c7f203cd470023891184a6e52d9562c9cc729bc/junit-platform-launcher-1.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-console/1.0.0-M2/e5976edd133c6966f56471d37bf89f86f86df62c/junit-platform-console-1.0.0-M2.jar:/Users/keke/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar"/>
+<property name="java.class.version" value="52.0"/>
+<property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/endorsed"/>
+<property name="java.ext.dirs" value="/Users/keke/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+<property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre"/>
+<property name="java.io.tmpdir" value="/var/folders/dc/8rr0py3s7cn0231wk3h2j3bh0000gn/T/"/>
+<property name="java.library.path" value="/Users/keke/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+<property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+<property name="java.runtime.version" value="1.8.0_77-b03"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="1.8"/>
+<property name="java.util.logging.manager" value="org.apache.logging.log4j.jul.LogManager"/>
+<property name="java.vendor" value="Oracle Corporation"/>
+<property name="java.vendor.url" value="http://java.oracle.com/"/>
+<property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+<property name="java.version" value="1.8.0_77"/>
+<property name="java.vm.info" value="mixed mode"/>
+<property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="1.8"/>
+<property name="java.vm.vendor" value="Oracle Corporation"/>
+<property name="java.vm.version" value="25.77-b03"/>
+<property name="line.separator" value="
+"/>
+<property name="os.arch" value="x86_64"/>
+<property name="os.name" value="Mac OS X"/>
+<property name="os.version" value="10.11.6"/>
+<property name="path.separator" value=":"/>
+<property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/classes"/>
+<property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.cpu.isalist" value=""/>
+<property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+<property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --hide-details --all -n .*Test -r /Users/keke/Work/github/vertx-kafka-relay/build/test-results/junit-platform /Users/keke/Work/github/vertx-kafka-relay/build/classes/main /Users/keke/Work/github/vertx-kafka-relay/build/resources/main /Users/keke/Work/github/vertx-kafka-relay/build/classes/test /Users/keke/Work/github/vertx-kafka-relay/build/resources/test"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="sun.os.patch.level" value="unknown"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/Users/keke/Work/github/vertx-kafka-relay"/>
+<property name="user.home" value="/Users/keke"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="keke"/>
+<property name="user.timezone" value="Asia/Shanghai"/>
+<property name="user.variant" value=""/>
+</properties>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>
