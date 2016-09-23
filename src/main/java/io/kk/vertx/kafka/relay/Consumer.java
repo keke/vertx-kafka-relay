@@ -119,18 +119,12 @@ public class Consumer extends BaseVerticle {
   }
 
 
-  private Map<String, Object> updateConfig(Map<String, Object> config) {
+  protected Map<String, Object> updateConfig(Map<String, Object> config) {
     String group = System.getProperty("CONSUMER_GROUP_ID");
     if (StringUtils.isNotBlank(group)) {
       config.put("group.id", group);
       LOG.info("Consumer group.id: {}", group);
     }
-    String clientId = System.getProperty("CLIENT_ID");
-    if (StringUtils.isNotBlank(clientId)) {
-      LOG.info("Consumer id: {}", clientId);
-      config.put("client.id", clientId);
-    }
-    updateBServers(bServers, config);
-    return config;
+    return super.updateConfig(config);
   }
 }

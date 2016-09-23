@@ -44,16 +44,6 @@ public class Producer extends BaseVerticle {
     super.stop(stopFuture);
   }
 
-  private Map<String, Object> updateConfig(Map<String, Object> config) {
-    String clientId = System.getProperty("CLIENT_ID");
-    if (StringUtils.isNotBlank(clientId)) {
-      LOG.info("Producer id: {}", clientId);
-      config.put("client.id", clientId);
-    }
-    updateBServers(bServers, config);
-    return config;
-  }
-
   private void addTopics(List<String> addrs) {
     addrs.forEach(add -> {
       if (!addresses.contains(add)) {

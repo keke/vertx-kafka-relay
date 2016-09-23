@@ -3,6 +3,8 @@ package io.kk.vertx.kafka.relay;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.json.JsonObject;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public abstract class BaseVerticle extends AbstractVerticle {
   protected static final String ADDRESSES = "vertx.addresses";
   protected static final String KAFAK = "kafka";
   protected static final String END_KAFAK = "." + KAFAK;
+  private static final Logger LOG = LoggerFactory.getLogger(BaseVerticle.class);
   protected final List<String> bServers;
   protected List<String> addresses = new ArrayList<>();
 
@@ -41,5 +44,15 @@ public abstract class BaseVerticle extends AbstractVerticle {
         config.put(BOOTSTRAP_SERVERS, bootServers);
       }
     }
+  }
+
+  protected Map<String, Object> updateConfig(Map<String, Object> config) {
+    String clientId = System.getProperty("CLIENT_ID");
+    if (StringUtils.isNotBlank(clientId)) {
+      LOG.info("client id: {}", clientId);
+      config.put("client.id", clientId);
+    }
+    updateBServers(bServers, config);
+    return config;
   }
 }
