@@ -6,8 +6,3 @@ deployment:
     tag: /v*/
     commands:
       - ./gradlew bintraUpload
-general:
-  artifacts:
-    - "build/libs"
-    - "build/docs"
-    - "build/test-results"
