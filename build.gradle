@@ -115,4 +115,3 @@ task sourcesJar(type: Jar) {
 artifacts {
   archives javadocJar, sourcesJar
 }
-install.dependsOn test

@@ -65,7 +65,8 @@ public class Producer extends BaseVerticle {
       }
       ary.add(e.getValue());
     });
-    ProducerRecord<String, String> record = new ProducerRecord<String, String>(message.address() + END_KAFAK, keyObj.toString(), message.body().toString());
+    ProducerRecord<String, String> record = new ProducerRecord<String, String>(message.address() + END_KAFAK,
+        keyObj.toString(), message.body().toString());
 
     producer.send(record, (metadata, exception) -> {
       if (exception != null) {

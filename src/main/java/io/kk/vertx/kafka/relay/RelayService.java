@@ -19,15 +19,26 @@ import java.util.List;
  * @version 0.0.1
  */
 public class RelayService extends AbstractVerticle {
+  /**
+   * Event to trigger relay deployment.
+   * <pre>
+   * <code>
+   *   eventbus.publish(RelayService.DEPLOY_RELAY);
+   * </code>
+   * </pre>
+   */
   public static final String DEPLOY_RELAY = "deploy.relay";
+  /**
+   * Config attribute: <code>lazyDeploy</code>: whether want to do lazy deploy of relay service.
+   */
+  public static final String LAZY_DEPLOY = "lazyDeploy";
   private static final Logger LOG = LoggerFactory.getLogger(RelayService.class);
   private static final String CONSUMER = "consumer";
   private static final String PRODUCER = "producer";
 
-
   @Override
   public void start(Future<Void> startFuture) throws Exception {
-    if (config().getBoolean("lazyDeploy", false))
+    if (config().getBoolean(LAZY_DEPLOY, false))
       vertx.eventBus().consumer(DEPLOY_RELAY, (message) -> doDeploy(startFuture));
     else
       doDeploy(startFuture);
