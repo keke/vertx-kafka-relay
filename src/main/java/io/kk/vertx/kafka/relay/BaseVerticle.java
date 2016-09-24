@@ -36,7 +36,7 @@ public abstract class BaseVerticle extends AbstractVerticle {
   }
 
   protected void updateBServers(List<String> bServers, Map<String, Object> config) {
-    if (bServers != null) {
+    if (bServers != null && !bServers.isEmpty()) {
       config.put(BOOTSTRAP_SERVERS, StringUtils.join(bServers, ","));
     } else {
       String bootServers = System.getenv("KFK_BSERVERS");
@@ -53,6 +53,7 @@ public abstract class BaseVerticle extends AbstractVerticle {
       config.put("client.id", clientId);
     }
     updateBServers(bServers, config);
+    LOG.debug("Kafka Config : {}", config);
     return config;
   }
 }
