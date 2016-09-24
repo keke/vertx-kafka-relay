@@ -1,0 +1,16 @@
+Configuration:
+  Appenders:
+    Console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{UNIX_MILLIS}- [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1.} - %msg%n"
+
+  Loggers:
+    Root:
+      level: error
+      AppenderRef:
+        ref: Console
+    Logger:
+      - name: io.kk
+        level: debug

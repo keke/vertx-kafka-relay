@@ -1,7 +1,6 @@
 package io.kk.vertx.kafka.relay;
 
 import io.vertx.core.*;
-import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.curator.framework.CuratorFramework;
@@ -28,8 +27,10 @@ public class RelayService extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> startFuture) throws Exception {
-    vertx.eventBus().consumer(DEPLOY_RELAY, (message) -> handleDeploy(message, startFuture));
-
+    if (config().getBoolean("lazyDeploy", false))
+      vertx.eventBus().consumer(DEPLOY_RELAY, (message) -> doDeploy(startFuture));
+    else
+      doDeploy(startFuture);
   }
 
   @Override
@@ -37,7 +38,7 @@ public class RelayService extends AbstractVerticle {
     super.stop(stopFuture);
   }
 
-  private <T> void handleDeploy(Message<T> message, Future<Void> startFuture) {
+  private <T> void doDeploy(Future<Void> startFuture) {
     List<Future> fs = new ArrayList<>();
     Future<List<String>> future = getBootServers();
     future.setHandler(h -> {

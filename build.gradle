@@ -3,14 +3,20 @@ group 'io.kk'
 apply plugin: 'java'
 apply plugin: "jacoco"
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin: 'org.junit.platform.gradle.plugin'
 
 sourceCompatibility = 1.8
-
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}
 repositories {
   mavenLocal()
   jcenter()
-
 }
 
 dependencies {
@@ -40,7 +46,7 @@ dependencies {
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 task wrapper(type: Wrapper) {
-  gradleVersion = '3.0'
+  gradleVersion = '3.1'
 }
 
 test {
@@ -94,14 +100,6 @@ junitPlatform {
   // enableStandardTestTask true
   // reportsDir "build/test-results/junit-platform" // this is the default
   logManager 'org.apache.logging.log4j.jul.LogManager'
-}
-
-task release() << {}
-
-gradle.taskGraph.whenReady { taskGraph ->
-  if (!taskGraph.hasTask(release)) {
-    version += '-SNAPSHOT'
-  }
 }
 
 task javadocJar(type: Jar) {

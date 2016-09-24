@@ -10,7 +10,7 @@ public interface VertxMessageFactory<T> {
    * Create a Vertx message object from String
    *
    * @param value - a string which is received from Kafka
-   * @return
+   * @return message object <code>T</code> from the strong
    */
   T message(String value);
 }
