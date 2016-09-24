@@ -34,7 +34,6 @@ public class Producer extends BaseVerticle {
       e.reply("ok");
     });
     producer = new KafkaProducer<String, String>(updateConfig(loadConfig(config())));
-
     super.start(startFuture);
   }
 
@@ -55,7 +54,7 @@ public class Producer extends BaseVerticle {
   }
 
   private <T> void sendToKafka(Message<T> message) {
-    LOG.debug("Receive a Vertx message on address={}", message.address());
+    LOG.debug("Receive a Vertx message: address={}", message.address());
     JsonObject keyObj = new JsonObject();
     message.headers().forEach(e -> {
       JsonArray ary = keyObj.getJsonArray(e.getKey());
