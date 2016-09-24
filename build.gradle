@@ -129,11 +129,13 @@ bintray {
   user = "keke"
   key = System.getenv("BINTRAY_KEY")
   publications = ['MyPublication']
+  publish = true
   pkg {
     repo = 'keke-maven'
     name = 'vertx_kafka_relay'
     licenses = ['Apache-2.0']
     publicDownloadNumbers = true
+
     vcsUrl = 'https://github.com/keke/vertx-kafka-relay.git'
     websiteUrl = 'https://github.com/keke/vertx-kafka-relay'
     issueTrackerUrl = 'https://github.com/keke/vertx-kafka-relay/issues'
