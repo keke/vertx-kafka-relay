@@ -140,6 +140,7 @@ bintray {
     githubRepo = "keke/vertx-kafka-relay"
     version {
       name = "0.0.1"
+      released  = new Date()
     }
   }
 }
