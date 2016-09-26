@@ -126,7 +126,7 @@ artifacts {
 }
 
 bintray {
-  user = "keke"
+  user = System.getenv("BINTRAY_NAME")
   key = System.getenv("BINTRAY_KEY")
   publications = ['MyPublication']
   publish = true
@@ -141,8 +141,8 @@ bintray {
     issueTrackerUrl = 'https://github.com/keke/vertx-kafka-relay/issues'
     githubRepo = "keke/vertx-kafka-relay"
     version {
-      name = "0.0.1"
-      released  = new Date()
+      name = "$version"
+      released = new Date()
     }
   }
 }
