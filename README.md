@@ -1,2 +1,1 @@
-# vertx-kafka-relay
-[![Build Status](https://travis-ci.org/keke/vertx-kafka-relay.svg?branch=master)](https://travis-ci.org/keke/vertx-kafka-relay)
+[![CircleCI](https://circleci.com/gh/keke/vertx-kafka-relay.svg?style=svg)](https://circleci.com/gh/keke/vertx-kafka-relay)
