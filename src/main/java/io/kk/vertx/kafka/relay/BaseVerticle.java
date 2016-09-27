@@ -13,14 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
+ * Abstract class for Verticle here
+ *
  * @author keke
+ * @version 0.0.1
+ * @since 0.0.1
  */
 public abstract class BaseVerticle extends AbstractVerticle {
   public static final String BOOTSTRAP_SERVERS = "bootstrap.servers";
-
-  protected static final String ADDRESSES = "vertx.addresses";
+  protected static final String ADDRESSES = "addresses";
   protected static final String KAFAK = "kafka";
   protected static final String END_KAFAK = "." + KAFAK;
+  protected static final String CLIENT_ID = "CLIENT_ID";
+  protected static final String KFK_BSERVERS = "KFK_BSERVERS";
   private static final Logger LOG = LoggerFactory.getLogger(BaseVerticle.class);
   protected final List<String> bServers;
   protected List<String> addresses = new ArrayList<>();
@@ -30,7 +35,7 @@ public abstract class BaseVerticle extends AbstractVerticle {
   }
 
   protected Map<String, Object> loadConfig(JsonObject config) throws IOException {
-    JsonObject kafkaConfig = config.getJsonObject("kafka");
+    JsonObject kafkaConfig = config.getJsonObject(KAFAK);
     Objects.requireNonNull(kafkaConfig);
     return kafkaConfig.getMap();
   }
@@ -39,7 +44,7 @@ public abstract class BaseVerticle extends AbstractVerticle {
     if (bServers != null && !bServers.isEmpty()) {
       config.put(BOOTSTRAP_SERVERS, StringUtils.join(bServers, ","));
     } else {
-      String bootServers = System.getenv("KFK_BSERVERS");
+      String bootServers = System.getenv(KFK_BSERVERS);
       if (StringUtils.isNotBlank(bootServers)) {
         config.put(BOOTSTRAP_SERVERS, bootServers);
       }
@@ -47,10 +52,10 @@ public abstract class BaseVerticle extends AbstractVerticle {
   }
 
   protected Map<String, Object> updateConfig(Map<String, Object> config) {
-    String clientId = System.getProperty("CLIENT_ID");
+    String clientId = System.getProperty(CLIENT_ID);
     if (StringUtils.isNotBlank(clientId)) {
       LOG.info("client id: {}", clientId);
-      config.put("client.id", clientId);
+      config.put(CLIENT_ID, clientId);
     }
     updateBServers(bServers, config);
     LOG.debug("Kafka Config : {}", config);

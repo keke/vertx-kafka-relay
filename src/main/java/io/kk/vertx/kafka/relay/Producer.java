@@ -4,21 +4,21 @@ import io.vertx.core.Future;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.config.ConfigException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author keke
  */
 public class Producer extends BaseVerticle {
   private static final Logger LOG = LoggerFactory.getLogger(Producer.class);
-  private static final String RELAY_PRODUCER_TOPICS_UPDATE = "relay.producer.topics.update";
+  public static final String RELAY_PRODUCER_TOPICS_UPDATE = "relay.producer.topics.update";
   private KafkaProducer<String, String> producer;
 
   public Producer(List<String> bServers) {
@@ -33,7 +33,12 @@ public class Producer extends BaseVerticle {
       addTopics(e.body().getList());
       e.reply("ok");
     });
-    producer = new KafkaProducer<String, String>(updateConfig(loadConfig(config())));
+    try {
+      setProducer(new KafkaProducer<>(updateConfig(loadConfig(config()))));
+    } catch (ConfigException e) {
+      startFuture.fail(e);
+      return;
+    }
     super.start(startFuture);
   }
 
@@ -74,5 +79,9 @@ public class Producer extends BaseVerticle {
       }
       LOG.debug("Sent a message {}", metadata);
     });
+  }
+
+  void setProducer(KafkaProducer<String, String> producer) {
+    this.producer = Objects.requireNonNull(producer);
   }
 }
