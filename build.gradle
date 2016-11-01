@@ -58,7 +58,7 @@ dependencies {
   runtime group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4JVersion"
   runtime "org.slf4j:jul-to-slf4j:$slf4jVersion"
   testCompile "io.vertx:vertx-unit:$vertxVersion"
-  testCompile "org.mockito:mockito-all:$mockitoVersion"
+  testCompile "org.mockito:mockito-core:$mockitoVersion"
   testCompile "org.junit.jupiter:junit-jupiter-api:$junitVersion"
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
